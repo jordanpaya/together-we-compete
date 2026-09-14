@@ -64,6 +64,6 @@ Search the code for `TODO` and `PLACEHOLDER` to find each one.
 
 1. **Logo.** Replace `assets/logo.svg` with the real file. The header shows it at 28px tall; adjust `.logo img` in the CSS if the real logo needs a different height.
 2. **Founder photos.** Save them as `assets/founders/jordan.jpg`, `lucas.jpg`, and `ethan.jpg`. Square or portrait, at least 800px wide. Until a file exists its slot is hidden.
-3. **Drop-off location.** Address and hours on `donate.html`.
+3. **Drop-off details.** The address is in. Add where on campus and what days or hours on `donate.html`.
 4. **Form endpoint.** The `action` attribute on `<form id="gear-form">` in `donate.html`. Netlify Forms or Formspree both work without a build step. See the comment above the form.
 5. **Events.** Replace the two placeholder entries in `data/events.json` or delete them.
