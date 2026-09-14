@@ -67,3 +67,11 @@ Search the code for `TODO` and `PLACEHOLDER` to find each one.
 3. **Drop-off details.** The address is in. Add where on campus and what days or hours on `donate.html`.
 4. **Form endpoint.** The `action` attribute on `<form id="gear-form">` in `donate.html`. Netlify Forms or Formspree both work without a build step. See the comment above the form.
 5. **Events.** Replace the two placeholder entries in `data/events.json` or delete them.
+
+## Cache busting
+
+Each page links the stylesheet and scripts with a `?v=` tag. Bump it whenever you change CSS or JS so visitors get the new file instead of a cached one:
+
+```bash
+V=$(git rev-parse --short HEAD); sed -i '' -E "s/\?v=[a-z0-9]+/?v=$V/g" index.html donate.html events.html about.html
+```
