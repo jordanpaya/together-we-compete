@@ -225,10 +225,11 @@ h1, h2, h3, h4 {
   display: block;
   opacity: 0;
   transition: opacity 600ms ease;
-  touch-action: manipulation;
-  cursor: pointer;
+  touch-action: pan-y;
+  cursor: grab;
 }
 .hero__visual canvas.is-ready { opacity: 1; }
+.hero__visual canvas.is-grabbing { cursor: grabbing; }
 @media (min-width: 900px) {
   .hero { padding-block: calc(var(--section-y) * 0.75) var(--section-y); }
   .hero__inner { grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 4rem; }

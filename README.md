@@ -11,7 +11,7 @@ events.html         full events list and how event days work
 about.html          why we do this, founders, contact
 css/styles.css      styles, mobile first
 js/main.js          nav toggle, events loader, form guard
-js/shader.js        animated gradient panel in the hero (raw WebGL, no deps)
+js/ball.js          spinning basketball in the hero (raw WebGL, no deps)
 data/events.json    upcoming events (edit this, not the HTML)
 assets/logo.svg     header logo (placeholder, replace with the real file)
 assets/favicon.svg  browser tab icon
