@@ -1,6 +1,5 @@
 /* Together We Compete — small bits of behavior.
    1. Mobile nav toggle
-   2. Show pickup address field only when "Scheduled pickup" is chosen
    3. Load events from data/events.json
    4. Stop the form from posting until an endpoint is set
 */
@@ -23,22 +22,7 @@
     });
   }
 
-  /* 2. Pickup address */
   var form = document.getElementById("gear-form");
-  var addressWrap = document.getElementById("pickup-address");
-  var addressInput = document.getElementById("address");
-  if (form && addressWrap && addressInput) {
-    var syncAddress = function () {
-      var method = form.querySelector('input[name="method"]:checked');
-      var needs = method && method.value === "pickup";
-      addressWrap.hidden = !needs;
-      addressInput.required = needs;
-    };
-    form.addEventListener("change", function (e) {
-      if (e.target.name === "method") syncAddress();
-    });
-    syncAddress();
-  }
 
   /* 3. Events */
   var list = document.getElementById("events-list");

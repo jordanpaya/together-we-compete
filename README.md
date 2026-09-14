@@ -6,7 +6,7 @@ Static site. Plain HTML, CSS, and one small JavaScript file. No build step.
 
 ```
 index.html          home: hero, what we do, donate band, next events
-donate.html         what we accept, how to hand it over, the form
+donate.html         what we accept, drop-off, the form
 events.html         full events list and how event days work
 about.html          why we do this, founders, contact
 css/styles.css      styles, mobile first

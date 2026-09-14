@@ -9,7 +9,7 @@
 
   var canvas = document.getElementById("hero-ball");
   if (!canvas) return;
-  var gl = canvas.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power" });
+  var gl = canvas.getContext("webgl", { antialias: false, alpha: true, premultipliedAlpha: true, powerPreference: "low-power" });
   if (!gl) return;
   var hasDeriv = !!gl.getExtension("OES_standard_derivatives");
 
@@ -27,7 +27,6 @@
     "uniform mat3 uRot;",           // world -> object space
     "varying vec2 vUv;",
 
-    "const vec3 BG     = vec3(0.925, 0.918, 0.890);", // #eceae3
     "const vec3 ORANGE = vec3(1.000, 0.416, 0.239);", // #ff6a3d
     "const vec3 INK    = vec3(0.078, 0.086, 0.102);", // #14161a
     "const float SEAM_ANGLE = 0.92;",  // curved seams: circles 52.7deg from the +/-x axis
@@ -69,10 +68,11 @@
     "  float m = min(res.x, res.y);",
     "  vec2 uv = (vUv * res - 0.5 * res) / m;",   // short axis spans -0.5..0.5
 
-    // Background with a soft contact shadow under the ball
+    // Transparent background with a soft contact shadow under the ball
     "  vec2 s = (uv - vec2(0.0, -0.395)) / vec2(0.30, 0.055);",
-    "  float shadow = exp(-dot(s, s) * 1.1) * 0.20;",
-    "  vec3 col = mix(BG, INK, shadow);",
+    "  float shadow = exp(-dot(s, s) * 1.1) * 0.18;",
+    "  vec3 col = INK * shadow;",   // premultiplied
+    "  float alpha = shadow;",
 
     // Ray toward a unit sphere at the origin, ball nudged up a little
     "  vec2 p = uv - vec2(0.0, 0.045);",
@@ -107,8 +107,9 @@
     "    light *= 0.93 + 0.14 * grain;",
     "    vec3 ball = base * light + spec * (1.0 - seam) + rim * base * 0.6;",
     "    col = mix(col, ball, cover);",
+    "    alpha = mix(alpha, 1.0, cover);",
     "  }",
-    "  gl_FragColor = vec4(col, 1.0);",
+    "  gl_FragColor = vec4(col, alpha);",
     "}"
   ].join("\n");
 
@@ -134,6 +135,7 @@
     return;
   }
   gl.useProgram(program);
+  gl.clearColor(0, 0, 0, 0);
 
   var buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -187,6 +189,7 @@
     gl.uniform2f(uRes, width, height);
     gl.uniform1f(uTime, t);
     gl.uniformMatrix3fv(uRot, false, rot);
+    gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
 
