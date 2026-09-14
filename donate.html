@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donate gear · Together We Compete</title>
+  <meta name="description" content="What sports gear Together We Compete accepts, what we can't take, and how to drop it off or schedule a pickup in Los Angeles.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared header. If you change it here, change it in the other three pages too. -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <!-- Drop your logo file at assets/logo.svg. The placeholder there now is a stand-in. -->
+      <a class="logo" href="index.html" aria-label="Together We Compete, home">
+        <img src="assets/logo.svg" alt="Together We Compete" width="220" height="32">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="button button--primary button--small" href="donate.html" aria-current="page">Donate gear</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="container">
+        <p class="eyebrow">Donate gear</p>
+        <h1 class="page-head__title">If it's still playable, we want it.</h1>
+        <p class="section__lede">Used is fine. It needs to be clean, intact, and something a kid could use this week.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="accept-heading">
+      <div class="container split">
+        <div>
+          <h2 class="list-heading" id="accept-heading">What we accept</h2>
+          <ul class="plain-list">
+            <li>Cleats and athletic shoes</li>
+            <li>Balls, any sport</li>
+            <li>Pads and protective gear</li>
+            <li>Helmets</li>
+            <li>Gloves and mitts</li>
+            <li>Jerseys and uniforms</li>
+            <li>Racquets and bats</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="list-heading">What we can't take</h2>
+          <ul class="plain-list">
+            <li>Cracked, dented, or expired helmets</li>
+            <li>Broken straps, buckles, or padding</li>
+            <li>Mold, heavy stains, or strong odors</li>
+            <li>Single shoes or incomplete sets</li>
+          </ul>
+          <p class="note">If we'd have to throw it away, please recycle it instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="handover-heading">
+      <div class="container">
+        <p class="eyebrow">Two ways</p>
+        <h2 class="section__title" id="handover-heading">Hand it over.</h2>
+        <ul class="methods">
+          <li class="method">
+            <h3 class="method__title">Drop-off</h3>
+            <!-- TODO: Replace with the real drop-off location and hours. -->
+            <p class="placeholder">[Drop-off location, address, and hours]</p>
+          </li>
+          <li class="method">
+            <h3 class="method__title">Scheduled pickup</h3>
+            <p>For larger donations anywhere in Los Angeles. Use the form and we'll set a time.</p>
+          </li>
+        </ul>
+
+        <!--
+          TODO: Connect this form.
+          Options that work with a static site and no build step:
+            - Netlify Forms: add data-netlify="true" to the <form> tag and deploy on Netlify.
+            - Formspree or similar: set action="https://formspree.io/f/YOUR_ID" and method="post".
+          Until then, submitting the form does nothing except show the notice below it.
+        -->
+        <form class="form" id="gear-form" action="#TODO-form-endpoint" method="post" novalidate>
+          <h3 class="form__title">Tell us what you have</h3>
+
+          <div class="form__grid">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="optional">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="quantity">Roughly how many items</label>
+              <input id="quantity" name="quantity" type="number" min="1" inputmode="numeric">
+            </div>
+            <div class="field field--full">
+              <label for="gear">What you're donating</label>
+              <textarea id="gear" name="gear" rows="4" placeholder="Example: 2 pairs of soccer cleats (youth size 4), 1 baseball glove, 3 basketballs" required></textarea>
+            </div>
+
+            <fieldset class="field field--full">
+              <legend>How would you like to hand it over?</legend>
+              <div class="radio-group">
+                <label class="radio"><input type="radio" name="method" value="drop-off" checked> <span>Drop-off</span></label>
+                <label class="radio"><input type="radio" name="method" value="pickup"> <span>Scheduled pickup</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field field--full" id="pickup-address" hidden>
+              <label for="address">Pickup address</label>
+              <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Street, city, ZIP">
+            </div>
+
+            <div class="field field--full">
+              <label for="notes">Anything else <span class="optional">(optional)</span></label>
+              <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+          </div>
+
+          <button class="button button--primary" type="submit">Send</button>
+          <p class="form__notice" id="form-notice" hidden role="status" tabindex="-1">This form isn't connected yet. Email us instead and we'll sort it out.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer. Same note as the header. -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__mission">Sports should never be a privilege.</p>
+      <div class="site-footer__grid">
+        <ul class="site-footer__links">
+          <li><a href="donate.html">Donate gear</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <ul class="site-footer__links">
+          <!-- TODO: Replace with the real contact email. -->
+          <li><a class="placeholder" href="mailto:hello@example.com">[contact email]</a></li>
+          <!-- TODO: Replace with the real Instagram handle and URL. -->
+          <li><a class="placeholder" href="https://instagram.com/" rel="noopener">Instagram [@handle]</a></li>
+        </ul>
+      </div>
+      <p class="site-footer__meta">Together We Compete &middot; Los Angeles, CA</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

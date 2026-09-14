@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Together We Compete</title>
+  <meta name="description" content="Together We Compete collects sports gear for kids in Los Angeles who can't afford it and runs free community sports events. Student-run, based in LA.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared header. If you change it here, change it in the other three pages too. -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <!-- Drop your logo file at assets/logo.svg. The placeholder there now is a stand-in. -->
+      <a class="logo" href="index.html" aria-label="Together We Compete, home">
+        <img src="assets/logo.svg" alt="Together We Compete" width="220" height="32">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="button button--primary button--small" href="donate.html">Donate gear</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Los Angeles &middot; Student-run</p>
+          <h1 class="hero__title">Sports should never be a&nbsp;privilege.</h1>
+          <p class="hero__lede">We collect sports gear, get it to kids in Los Angeles who can't afford it, and run free community events so they have somewhere to play.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="donate.html">Donate gear</a>
+            <a class="button button--secondary" href="events.html">See upcoming events</a>
+          </div>
+        </div>
+        <!-- Animated gradient panel (js/shader.js). Decorative only. Tap it for a ripple. -->
+        <div class="hero__visual">
+          <canvas id="hero-shader" aria-hidden="true"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="section" aria-labelledby="what-heading">
+      <div class="container">
+        <p class="eyebrow">What we do</p>
+        <h2 class="section__title" id="what-heading">Gear in. Gear out. A place to play.</h2>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__number" aria-hidden="true">01</span>
+            <h3 class="step__title">Collect gear</h3>
+            <p>Cleats, balls, pads, gloves, racquets. New or used, from families and teams across LA.</p>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">02</span>
+            <h3 class="step__title">Get it to kids</h3>
+            <p>We sort it, clean it, and hand it off through schools and community groups that already know who needs it.</p>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">03</span>
+            <h3 class="step__title">Run free events</h3>
+            <p>Open community sports days. No fees, no tryouts. We bring the gear.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DONATE BAND -->
+    <section class="band" aria-labelledby="band-heading">
+      <div class="container band__inner">
+        <div>
+          <p class="eyebrow">Donate gear</p>
+          <h2 class="section__title" id="band-heading">If it's still playable, we want it.</h2>
+          <p class="section__lede">Cleats, balls, pads, helmets, gloves, jerseys, racquets. Used is fine. Drop it off or we'll come get it.</p>
+        </div>
+        <div class="band__action">
+          <a class="button button--light" href="donate.html">How to donate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT EVENTS -->
+    <section class="section" aria-labelledby="next-heading">
+      <div class="container">
+        <p class="eyebrow">Events</p>
+        <h2 class="section__title" id="next-heading">Next up.</h2>
+
+        <!-- Loaded from data/events.json. Shows the next three. -->
+        <ol class="events" id="events-list" data-limit="3" aria-live="polite"></ol>
+        <div class="events-empty" id="events-empty" hidden>
+          <p>Nothing scheduled right now. The next one gets posted on Instagram first.</p>
+        </div>
+
+        <p class="section__more"><a href="events.html">All events</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer. Same note as the header. -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__mission">Sports should never be a privilege.</p>
+      <div class="site-footer__grid">
+        <ul class="site-footer__links">
+          <li><a href="donate.html">Donate gear</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <ul class="site-footer__links">
+          <!-- TODO: Replace with the real contact email. -->
+          <li><a class="placeholder" href="mailto:hello@example.com">[contact email]</a></li>
+          <!-- TODO: Replace with the real Instagram handle and URL. -->
+          <li><a class="placeholder" href="https://instagram.com/" rel="noopener">Instagram [@handle]</a></li>
+        </ul>
+      </div>
+      <p class="site-footer__meta">Together We Compete &middot; Los Angeles, CA</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shader.js"></script>
+</body>
+</html>

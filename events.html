@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events · Together We Compete</title>
+  <meta name="description" content="Upcoming free community sports days in Los Angeles run by Together We Compete. Open to any kid, gear provided.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared header. If you change it here, change it in the other three pages too. -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <!-- Drop your logo file at assets/logo.svg. The placeholder there now is a stand-in. -->
+      <a class="logo" href="index.html" aria-label="Together We Compete, home">
+        <img src="assets/logo.svg" alt="Together We Compete" width="220" height="32">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="events.html" aria-current="page">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="button button--primary button--small" href="donate.html">Donate gear</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="container">
+        <p class="eyebrow">Events</p>
+        <h1 class="page-head__title">Free community sports days.</h1>
+        <p class="section__lede">Open to any kid who wants to play. Every event is free, and we bring the gear.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="upcoming-heading">
+      <div class="container">
+        <h2 class="visually-hidden" id="upcoming-heading">Upcoming</h2>
+        <!-- Loaded from data/events.json. Edit that file to add or remove events. -->
+        <ol class="events events--top" id="events-list" aria-live="polite"></ol>
+        <div class="events-empty" id="events-empty" hidden>
+          <p>Nothing scheduled right now. The next one gets posted on Instagram first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="expect-heading">
+      <div class="container">
+        <p class="eyebrow">Good to know</p>
+        <h2 class="section__title" id="expect-heading">How event days work.</h2>
+        <ul class="facts">
+          <li>No fees. No signup unless the listing says so.</li>
+          <li>We bring the balls, gloves, and pads. Come in clothes you can move in.</li>
+          <li>Any skill level. If you've never played, this is a good place to start.</li>
+          <li>Questions about a specific day? Email us and we'll answer.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer. Same note as the header. -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__mission">Sports should never be a privilege.</p>
+      <div class="site-footer__grid">
+        <ul class="site-footer__links">
+          <li><a href="donate.html">Donate gear</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <ul class="site-footer__links">
+          <!-- TODO: Replace with the real contact email. -->
+          <li><a class="placeholder" href="mailto:hello@example.com">[contact email]</a></li>
+          <!-- TODO: Replace with the real Instagram handle and URL. -->
+          <li><a class="placeholder" href="https://instagram.com/" rel="noopener">Instagram [@handle]</a></li>
+        </ul>
+      </div>
+      <p class="site-footer__meta">Together We Compete &middot; Los Angeles, CA</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
