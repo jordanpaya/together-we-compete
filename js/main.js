@@ -115,7 +115,14 @@
       });
   }
 
-  /* 4. Form guard */
+  /* 4. Founder photos: hide the slot if the file isn't there yet */
+  Array.prototype.forEach.call(document.querySelectorAll(".founder__photo img"), function (img) {
+    var hide = function () { img.parentNode.hidden = true; };
+    img.addEventListener("error", hide);
+    if (img.complete && img.naturalWidth === 0) hide();
+  });
+
+  /* 5. Form guard */
   var notice = document.getElementById("form-notice");
   if (form && notice) {
     form.addEventListener("submit", function (e) {

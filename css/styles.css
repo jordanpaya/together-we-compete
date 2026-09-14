@@ -427,19 +427,27 @@ fieldset.field { border: 0; padding: 0; margin: 0; min-width: 0; }
 .facts li:last-child { border-bottom: 1px solid var(--rule); }
 
 /* Founders */
-.founders { margin-top: 2.5rem; max-width: 36rem; }
-.founder {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 1.25rem 0;
-  border-top: 1px solid var(--rule);
+.founders { display: grid; gap: 2rem; margin-top: 2.5rem; }
+@media (min-width: 640px) { .founders { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+.founder { display: grid; gap: 0.25rem; }
+.founder__photo {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--page);
+  margin-bottom: 0.75rem;
 }
-.founder:last-child { border-bottom: 1px solid var(--rule); }
+.founder__photo img { width: 100%; height: 100%; object-fit: cover; }
 .founder__name { font-size: 1.375rem; }
 .founder__role { color: var(--body); font-family: var(--font-label); font-size: 0.875rem; }
-.founders + .note { max-width: 36rem; }
+.founders + .note { margin-top: 2rem; }
+
+/* Pillars (Mini Olympics) */
+.pillars { display: grid; gap: 2rem; margin-top: 3rem; }
+@media (min-width: 900px) { .pillars { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+.pillar { padding-top: 1.25rem; border-top: 2px solid var(--blue); }
+.pillar__title { font-size: 1.25rem; margin-bottom: 0.6rem; }
+.pillar p { color: var(--body); max-width: 26rem; }
 
 /* Contact */
 .contact { margin-top: 2.5rem; max-width: 36rem; }
