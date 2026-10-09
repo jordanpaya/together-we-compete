@@ -481,6 +481,13 @@ fieldset.field { border: 0; padding: 0; margin: 0; min-width: 0; }
 .site-footer__links a[aria-current="page"] { color: var(--orange); }
 .site-footer__links a { text-decoration: none; }
 .site-footer__links a:hover { text-decoration: underline; }
+.site-footer__legal {
+  margin-top: 2rem;
+  max-width: 44rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(251, 250, 247, 0.7);
+}
 .site-footer__meta {
   margin-top: 1.5rem;
   font-family: var(--font-label);
