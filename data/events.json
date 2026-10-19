@@ -10,5 +10,18 @@
     "description": "Bring cleats, balls, pads, helmets, gloves, jerseys, and racquets. Everything collected will be donated at LA Promise Fund's Pavo Palooza.",
     "signup_url": "donate.html",
     "signup_label": "What we accept"
+  },
+  {
+    "id": "pavo-palooza-2026",
+    "title": "Pavo Palooza",
+    "sport": "Hosted by LA Promise Fund",
+    "date": "2026-11-21",
+    "start_time": "9:00 AM",
+    "end_time": "12:00 PM",
+    "location_name": "Westbrook Academy",
+    "address": "2340 Firestone Blvd, South Gate, CA 90290",
+    "description": "Where everything collected in the Harvard-Westlake drive gets donated.",
+    "signup_url": "",
+    "signup_label": ""
   }
 ]
