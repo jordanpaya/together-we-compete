@@ -52,7 +52,7 @@ Add an object to the array in `data/events.json`:
 }
 ```
 
-`date` must be `YYYY-MM-DD`. Events with a date before today are hidden automatically. Leave `signup_url` empty to hide the link. If the array is empty, the page shows the empty state.
+`date` must be `YYYY-MM-DD`. For a multi-day event add `"end_date": "YYYY-MM-DD"` and it stays listed until that day passes. Optional `description` adds a line under the location. Single-day events with a date before today are hidden automatically. Leave `signup_url` empty to hide the link. If the array is empty, the page shows the empty state.
 
 ## Shared header and footer
 
@@ -66,7 +66,7 @@ Search the code for `TODO` and `PLACEHOLDER` to find each one.
 2. **Founder photos.** Save them as `assets/founders/jordan.jpg`, `lucas.jpg`, and `ethan.jpg`. Square or portrait, at least 800px wide. Until a file exists its slot is hidden.
 3. **Drop-off details.** The address is in. Add where on campus and what days or hours on `donate.html`.
 4. **Form endpoint.** The `action` attribute on `<form id="gear-form">` in `donate.html`. Netlify Forms or Formspree both work without a build step. See the comment above the form.
-5. **Events.** Replace the two placeholder entries in `data/events.json` or delete them.
+5. **Events.** Add new ones to `data/events.json` as they come up.
 
 ## Cache busting
 

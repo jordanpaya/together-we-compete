@@ -1,26 +1,14 @@
 [
   {
-    "id": "placeholder-1",
-    "title": "[PLACEHOLDER] Community soccer day",
-    "sport": "Soccer",
-    "date": "2026-10-10",
-    "start_time": "10:00 AM",
-    "end_time": "1:00 PM",
-    "location_name": "[Park or field name]",
-    "address": "[Neighborhood], Los Angeles",
-    "signup_url": "",
-    "signup_label": "Sign up"
-  },
-  {
-    "id": "placeholder-2",
-    "title": "[PLACEHOLDER] Open basketball run",
-    "sport": "Basketball",
-    "date": "2026-11-07",
-    "start_time": "9:00 AM",
-    "end_time": "12:00 PM",
-    "location_name": "[Court or gym name]",
-    "address": "[Neighborhood], Los Angeles",
-    "signup_url": "",
-    "signup_label": "Sign up"
+    "id": "hw-gear-drive-fall-2026",
+    "title": "Sports equipment drive at Harvard-Westlake",
+    "sport": "Gear drive",
+    "date": "2026-10-28",
+    "end_date": "2026-11-19",
+    "location_name": "Harvard-Westlake Upper School",
+    "address": "3700 Coldwater Canyon Ave, Studio City",
+    "description": "Bring cleats, balls, pads, helmets, gloves, jerseys, and racquets. Everything collected will be donated at LA Promise Fund's Pavo Palooza.",
+    "signup_url": "donate.html",
+    "signup_label": "What we accept"
   }
 ]

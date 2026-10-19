@@ -370,6 +370,7 @@ fieldset.field { border: 0; padding: 0; margin: 0; min-width: 0; }
     "date sport"
     "date title"
     "date where"
+    "date desc"
     "date link";
 }
 .event__date {
@@ -390,6 +391,16 @@ fieldset.field { border: 0; padding: 0; margin: 0; min-width: 0; }
   margin-bottom: 0.35rem;
 }
 .event__date-day { font-size: 2.25rem; }
+.event__date-through {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--body);
+  white-space: nowrap;
+}
 .event__sport {
   grid-area: sport;
   font-family: var(--font-label);
@@ -401,13 +412,15 @@ fieldset.field { border: 0; padding: 0; margin: 0; min-width: 0; }
 }
 .event__title { grid-area: title; font-size: 1.375rem; }
 .event__where { grid-area: where; color: var(--body); }
+.event__desc { grid-area: desc; color: var(--body); margin-top: 0.5rem; max-width: 36rem; }
 .event__link { grid-area: link; margin-top: 0.5rem; font-family: var(--font-label); font-weight: 600; font-size: 0.9375rem; }
 .event__link:hover { color: var(--blue); }
 @media (min-width: 640px) {
   .event { grid-template-columns: 7rem 1fr auto; grid-template-areas:
     "date sport link"
     "date title link"
-    "date where link"; align-items: start; }
+    "date where link"
+    "date desc link"; align-items: start; }
   .event__link { margin-top: 0.25rem; align-self: center; }
 }
 .events-empty {

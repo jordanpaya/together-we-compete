@@ -46,9 +46,14 @@
     var item = el("li", "event");
 
     var date = el("time", "event__date");
-    date.setAttribute("datetime", ev.date);
+    date.setAttribute("datetime", ev.end_date ? ev.date + "/" + ev.end_date : ev.date);
     date.appendChild(el("span", "event__date-month", d.toLocaleDateString("en-US", { month: "short" })));
     date.appendChild(el("span", "event__date-day", String(d.getDate())));
+    if (ev.end_date) {
+      var e = parseDate(ev.end_date);
+      date.appendChild(el("span", "event__date-through",
+        "to " + e.toLocaleDateString("en-US", { month: "short" }) + " " + e.getDate()));
+    }
     item.appendChild(date);
 
     var sportLine = ev.sport || "";
@@ -60,6 +65,7 @@
     var where = ev.location_name || "";
     if (ev.address) where += (where ? ", " : "") + ev.address;
     if (where) item.appendChild(el("p", "event__where", where));
+    if (ev.description) item.appendChild(el("p", "event__desc", ev.description));
 
     if (ev.signup_url) {
       var link = el("a", "event__link", ev.signup_label || "Sign up");
@@ -82,7 +88,7 @@
         var today = new Date();
         today.setHours(0, 0, 0, 0);
         var upcoming = (Array.isArray(events) ? events : [])
-          .filter(function (ev) { return ev && ev.date && parseDate(ev.date) >= today; })
+          .filter(function (ev) { return ev && ev.date && parseDate(ev.end_date || ev.date) >= today; })
           .sort(function (a, b) { return parseDate(a.date) - parseDate(b.date); });
 
         if (!upcoming.length) { showEmpty(); return; }
