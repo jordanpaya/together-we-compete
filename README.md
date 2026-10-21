@@ -13,7 +13,7 @@ css/styles.css      styles, mobile first
 js/main.js          nav toggle, events loader, form guard
 js/ball.js          spinning basketball in the hero (raw WebGL, no deps)
 data/events.json    upcoming events (edit this, not the HTML)
-assets/logo.svg     header logo (placeholder, replace with the real file)
+assets/logo.svg     header logo
 assets/favicon.svg  browser tab icon
 ```
 
@@ -58,15 +58,14 @@ Add an object to the array in `data/events.json`:
 
 There is no build step, so the header and footer are copied into each of the four HTML files. If you change a nav link, change it in all four. Each page marks its own nav link with `aria-current="page"`.
 
-## Things left for you to fill in
+## Still optional
 
-Search the code for `TODO` and `PLACEHOLDER` to find each one.
-
-1. **Logo.** Replace `assets/logo.svg` with the real file. The header shows it at 28px tall; adjust `.logo img` in the CSS if the real logo needs a different height.
+1. **Logo.** `assets/logo.svg` is a recreation from the brand description. Replace it with the real file if you have one; the header shows it at 28px tall.
 2. **Founder photos.** Save them as `assets/founders/jordan.jpg`, `lucas.jpg`, and `ethan.jpg`. Square or portrait, at least 800px wide. Until a file exists its slot is hidden.
-3. **Drop-off details.** The address is in. Add where on campus and what days or hours on `donate.html`.
-4. **Form endpoint.** The `action` attribute on `<form id="gear-form">` in `donate.html`. Netlify Forms or Formspree both work without a build step. See the comment above the form.
-5. **Events.** Add new ones to `data/events.json` as they come up.
+
+## The donation form
+
+There is no backend. Submitting the form opens the visitor's email app with a message to support@togetherwecompete.org and the fields filled in. Without JavaScript the browser's own mailto form submission does the same thing.
 
 ## Cache busting
 

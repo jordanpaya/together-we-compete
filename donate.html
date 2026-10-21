@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=d580a97">
+  <link rel="stylesheet" href="css/styles.css?v=3a9bfd8">
 </head>
 <body>
 
@@ -18,7 +18,6 @@
   <!-- Shared header. If you change it here, change it in the other three pages too. -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <!-- Drop your logo file at assets/logo.svg. The placeholder there now is a stand-in. -->
       <a class="logo" href="index.html" aria-label="Together We Compete, home">
         <img src="assets/logo.svg" alt="Together We Compete" width="220" height="32">
       </a>
@@ -83,8 +82,7 @@
           <li class="method">
             <h3 class="method__title">Harvard-Westlake Upper School</h3>
             <p>3700 Coldwater Canyon Ave<br>Studio City, CA 91604</p>
-            <!-- TODO: Where on campus, and when. -->
-            <p class="placeholder">[Where on campus and what days or hours]</p>
+            <p><strong>October 28 to November 18.</strong> Everything collected goes to LA Promise Fund's Pavo Palooza on November 21.</p>
           </li>
           <li class="method">
             <h3 class="method__title">Have a lot?</h3>
@@ -92,14 +90,8 @@
           </li>
         </ul>
 
-        <!--
-          TODO: Connect this form.
-          Options that work with a static site and no build step:
-            - Netlify Forms: add data-netlify="true" to the <form> tag and deploy on Netlify.
-            - Formspree or similar: set action="https://formspree.io/f/YOUR_ID" and method="post".
-          Until then, submitting the form does nothing except show the notice below it.
-        -->
-        <form class="form" id="gear-form" action="#TODO-form-endpoint" method="post" novalidate>
+        <!-- Submitting opens the visitor's email app with the details filled in, addressed to support@. No backend needed. -->
+        <form class="form" id="gear-form" action="mailto:support@togetherwecompete.org" method="post" enctype="text/plain">
           <h3 class="form__title">Tell us what you have</h3>
 
           <div class="form__grid">
@@ -131,7 +123,7 @@
           </div>
 
           <button class="button button--primary" type="submit">Send</button>
-          <p class="form__notice" id="form-notice" hidden role="status" tabindex="-1">This form isn't connected yet. Email us instead and we'll sort it out.</p>
+          <p class="form__notice" id="form-notice" hidden role="status" tabindex="-1">Your email app should open with everything filled in. If it doesn't, email <a href="mailto:support@togetherwecompete.org">support@togetherwecompete.org</a>.</p>
         </form>
       </div>
     </section>
@@ -148,7 +140,7 @@
           <li><a href="about.html">About</a></li>
         </ul>
         <ul class="site-footer__links">
-          <li><a href="mailto:togetherwecompete@gmail.com">togetherwecompete@gmail.com</a></li>
+          <li><a href="mailto:support@togetherwecompete.org">support@togetherwecompete.org</a></li>
           <li><a href="https://instagram.com/togetherwecompete" rel="noopener">Instagram @togetherwecompete</a></li>
         </ul>
       </div>
@@ -157,6 +149,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=d580a97"></script>
+  <script src="js/main.js?v=3a9bfd8"></script>
 </body>
 </html>
