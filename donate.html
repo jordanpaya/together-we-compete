@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=53fc8f8">
+  <link rel="stylesheet" href="css/styles.css?v=91cadc3">
 </head>
 <body>
 
@@ -95,45 +95,10 @@
           </li>
           <li class="method">
             <h3 class="method__title">Have a lot?</h3>
-            <p>Use the form below and tell us what you have. We'll reply with the best way to hand it over.</p>
+            <p>Email <a href="mailto:support@togetherwecompete.org">support@togetherwecompete.org</a> and tell us what you have. We'll reply with the best way to hand it over.</p>
           </li>
         </ul>
 
-        <!-- Submitting opens the visitor's email app with the details filled in, addressed to support@. No backend needed. -->
-        <form class="form" id="gear-form" action="mailto:support@togetherwecompete.org" method="post" enctype="text/plain">
-          <h3 class="form__title">Tell us what you have</h3>
-
-          <div class="form__grid">
-            <div class="field">
-              <label for="name">Your name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="phone">Phone <span class="optional">(optional)</span></label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel">
-            </div>
-            <div class="field">
-              <label for="quantity">Roughly how many items</label>
-              <input id="quantity" name="quantity" type="number" min="1" inputmode="numeric">
-            </div>
-            <div class="field field--full">
-              <label for="gear">What you're donating</label>
-              <textarea id="gear" name="gear" rows="4" placeholder="Example: 2 pairs of soccer cleats (youth size 4), 1 baseball glove, 3 basketballs" required></textarea>
-            </div>
-
-            <div class="field field--full">
-              <label for="notes">Anything else <span class="optional">(optional)</span></label>
-              <textarea id="notes" name="notes" rows="3"></textarea>
-            </div>
-          </div>
-
-          <button class="button button--primary" type="submit">Send</button>
-          <p class="form__notice" id="form-notice" hidden role="status" tabindex="-1">Your email app should open with everything filled in. If it doesn't, email <a href="mailto:support@togetherwecompete.org">support@togetherwecompete.org</a>.</p>
-        </form>
       </div>
     </section>
 
@@ -183,6 +148,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=53fc8f8"></script>
+  <script src="js/main.js?v=91cadc3"></script>
 </body>
 </html>

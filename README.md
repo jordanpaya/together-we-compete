@@ -6,7 +6,7 @@ Static site. Plain HTML, CSS, and one small JavaScript file. No build step.
 
 ```
 index.html          home: hero, what we do, donate band, next events
-donate.html         what we accept, drop-off, the form
+donate.html         what we accept, drop-off, FAQ
 events.html         full events list and how event days work
 about.html          why we do this, founders, contact
 css/styles.css      styles, mobile first
@@ -66,10 +66,6 @@ There is no build step, so the header and footer are copied into each of the fou
 
 1. **Logo.** `assets/logo.svg` is a recreation from the brand description. Replace it with the real file if you have one; the header shows it at 28px tall.
 2. **Founder photos.** Save them as `assets/founders/jordan.jpg`, `lucas.jpg`, and `ethan.jpg`. Square or portrait, at least 800px wide. Until a file exists its slot is hidden.
-
-## The donation form
-
-There is no backend. Submitting the form opens the visitor's email app with a message to support@togetherwecompete.org and the fields filled in. Without JavaScript the browser's own mailto form submission does the same thing.
 
 ## Cache busting
 

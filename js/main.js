@@ -2,7 +2,6 @@
    1. Mobile nav toggle
    3. Load events from data/events.json
    4. Hide founder photo slots whose file is missing
-   5. Donation form: opens an email with the details filled in
 */
 (function () {
   "use strict";
@@ -22,8 +21,6 @@
       }
     });
   }
-
-  var form = document.getElementById("gear-form");
 
   /* 2b. Time-limited blocks: hide anything with data-until once that day has passed */
   var todayMid = new Date(); todayMid.setHours(0, 0, 0, 0);
@@ -195,29 +192,4 @@
     if (img.complete && img.naturalWidth === 0) hide();
   });
 
-  /* 5. Form: open the visitor's email app with the details filled in */
-  var notice = document.getElementById("form-notice");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      var v = function (n) { var el = form.elements[n]; return el && el.value ? el.value.trim() : ""; };
-      var body = [
-        "Name: " + v("name"),
-        "Email: " + v("email"),
-        "Phone: " + (v("phone") || "n/a"),
-        "Roughly how many items: " + (v("quantity") || "n/a"),
-        "",
-        "What I'm donating:",
-        v("gear"),
-        "",
-        "Anything else:",
-        v("notes") || "n/a"
-      ].join("\n");
-      window.location.href = "mailto:support@togetherwecompete.org"
-        + "?subject=" + encodeURIComponent("Gear donation from " + v("name"))
-        + "&body=" + encodeURIComponent(body);
-      if (notice) { notice.hidden = false; notice.focus(); }
-    });
-  }
 })();
