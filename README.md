@@ -54,6 +54,10 @@ Add an object to the array in `data/events.json`:
 
 `date` must be `YYYY-MM-DD`. For a multi-day event add `"end_date": "YYYY-MM-DD"` and it stays listed until that day passes. Optional `description` adds a line under the location. Single-day events with a date before today are hidden automatically. Leave `signup_url` empty to hide the link. If the array is empty, the page shows the empty state.
 
+## Time-limited blocks
+
+The orange announcement bar (every page) and the featured drive block on the home page carry a `data-until="YYYY-MM-DD"` attribute. They hide themselves automatically once that date has passed. To announce the next thing, edit the text and the date in the HTML.
+
 ## Shared header and footer
 
 There is no build step, so the header and footer are copied into each of the four HTML files. If you change a nav link, change it in all four. Each page marks its own nav link with `aria-current="page"`.

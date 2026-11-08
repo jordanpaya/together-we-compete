@@ -25,6 +25,38 @@
 
   var form = document.getElementById("gear-form");
 
+  /* 2b. Time-limited blocks: hide anything with data-until once that day has passed */
+  var todayMid = new Date(); todayMid.setHours(0, 0, 0, 0);
+  Array.prototype.forEach.call(document.querySelectorAll("[data-until]"), function (node) {
+    var p = node.getAttribute("data-until").split("-").map(Number);
+    var until = new Date(p[0], p[1] - 1, p[2]);
+    if (until < todayMid) node.hidden = true;
+  });
+
+  /* 2c. Scroll-in reveal for content below the fold (skipped for reduced motion).
+     Anything already on screen shows instantly. If the observer never fires, a
+     fallback shows everything so nothing can get stuck hidden. */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
+    var targets = document.querySelectorAll(".section > .container, .band__inner");
+    var ioFired = false;
+    var io = new IntersectionObserver(function (entries) {
+      ioFired = true;
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(targets, function (t) {
+      if (t.getBoundingClientRect().top < window.innerHeight * 0.95) return; // on screen already
+      t.classList.add("reveal");
+      io.observe(t);
+    });
+    setTimeout(function () {
+      if (ioFired) return;
+      Array.prototype.forEach.call(document.querySelectorAll(".reveal"), function (t) { t.classList.add("is-visible"); });
+    }, 3000);
+  }
+
   /* 3. Events */
   var list = document.getElementById("events-list");
   var empty = document.getElementById("events-empty");
@@ -68,13 +100,63 @@
     if (where) item.appendChild(el("p", "event__where", where));
     if (ev.description) item.appendChild(el("p", "event__desc", ev.description));
 
+    var links = el("div", "event__links");
     if (ev.signup_url) {
       var link = el("a", "event__link", ev.signup_label || "Sign up");
       link.href = ev.signup_url;
       link.rel = "noopener";
-      item.appendChild(link);
+      links.appendChild(link);
+    }
+    if (where) {
+      var maps = el("a", "event__link", "Directions");
+      maps.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(where);
+      maps.rel = "noopener";
+      links.appendChild(maps);
+    }
+    var cal = el("a", "event__link", "Add to calendar");
+    cal.href = icsHref(ev, where);
+    cal.setAttribute("download", (ev.id || "event") + ".ics");
+    links.appendChild(cal);
+    item.appendChild(links);
+
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var endD = parseDate(ev.end_date || ev.date);
+    if (d <= today && today <= endD) {
+      item.classList.add("event--now");
+      item.insertBefore(el("span", "event__now", "Happening now"), item.firstChild);
     }
     return item;
+  }
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function icsDate(dt) { return "" + dt.getFullYear() + pad(dt.getMonth() + 1) + pad(dt.getDate()); }
+  function icsTime(str) {
+    // "9:00 AM" -> "090000"
+    var m = /^(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec(str || "");
+    if (!m) return null;
+    var h = parseInt(m[1], 10) % 12; if (/pm/i.test(m[3])) h += 12;
+    return pad(h) + m[2] + "00";
+  }
+  function icsEscape(t) { return String(t || "").replace(/\\/g, "\\\\").replace(/[,;]/g, function (c) { return "\\" + c; }).replace(/\n/g, "\\n"); }
+  function icsHref(ev, where) {
+    var start = parseDate(ev.date), end = parseDate(ev.end_date || ev.date);
+    var st = icsTime(ev.start_time), et = icsTime(ev.end_time);
+    var dtstart, dtend;
+    if (st) {
+      dtstart = "DTSTART:" + icsDate(start) + "T" + st;
+      dtend = "DTEND:" + icsDate(end) + "T" + (et || st);
+    } else {
+      end.setDate(end.getDate() + 1); // all-day DTEND is exclusive
+      dtstart = "DTSTART;VALUE=DATE:" + icsDate(start);
+      dtend = "DTEND;VALUE=DATE:" + icsDate(end);
+    }
+    var lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Together We Compete//Events//EN", "BEGIN:VEVENT",
+      "UID:" + (ev.id || Math.random().toString(36).slice(2)) + "@togetherwecompete.org",
+      dtstart, dtend, "SUMMARY:" + icsEscape(ev.title)];
+    if (where) lines.push("LOCATION:" + icsEscape(where));
+    if (ev.description) lines.push("DESCRIPTION:" + icsEscape(ev.description));
+    lines.push("END:VEVENT", "END:VCALENDAR");
+    return "data:text/calendar;charset=utf-8," + encodeURIComponent(lines.join("\r\n"));
   }
 
   function showEmpty() {

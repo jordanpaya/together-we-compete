@@ -9,13 +9,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3a9bfd8">
+  <link rel="stylesheet" href="css/styles.css?v=53fc8f8">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Shared header. If you change it here, change it in the other three pages too. -->
+  <div class="announce" data-until="2026-11-13">
+    <div class="container announce__inner">
+      <span class="announce__label">This week</span>
+      <p class="announce__text"><span class="announce__long">Gear drive at Harvard-Westlake Upper School, Monday to Friday, November 9 to 13.</span><span class="announce__short">Gear drive at Harvard-Westlake, Nov 9 to 13.</span></p>
+      <a class="announce__link" href="donate.html">What to bring</a>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="logo" href="index.html" aria-label="Together We Compete, home">
@@ -53,6 +61,30 @@
         <!-- Spinning basketball (js/ball.js). Decorative. Drag to spin, tap to flick. -->
         <div class="hero__visual">
           <canvas id="hero-ball" aria-hidden="true"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIS WEEK: THE DRIVE (hides itself after data-until) -->
+    <section class="section section--alt feature-wrap" id="drive" data-until="2026-11-13" aria-labelledby="drive-heading">
+      <div class="container feature">
+        <div class="feature__when">
+          <p class="eyebrow">This week</p>
+          <p class="feature__dates">Nov<br>9–13</p>
+          <p class="feature__days">Monday to Friday</p>
+        </div>
+        <div class="feature__body">
+          <h2 class="section__title" id="drive-heading">Sports gear drive at Harvard-Westlake.</h2>
+          <p class="section__lede">Bring the cleats, balls, pads, helmets, gloves, jerseys, and racquets you're not using. Used is fine if it's clean and intact. Everything collected is donated to kids at LA Promise Fund's Pavo Palooza on November 21.</p>
+          <ul class="feature__facts">
+            <li><span class="feature__fact-label">Where</span>Harvard-Westlake Upper School, 3700 Coldwater Canyon Ave, Studio City</li>
+            <li><span class="feature__fact-label">When</span>Monday to Friday, November 9 to 13</li>
+            <li><span class="feature__fact-label">Tax</span>Deductible. We're a registered 501(c)(3).</li>
+          </ul>
+          <div class="button-row">
+            <a class="button button--primary" href="donate.html">What we accept</a>
+            <a class="button button--secondary" href="https://www.google.com/maps/search/?api=1&query=3700+Coldwater+Canyon+Ave+Studio+City+CA+91604" rel="noopener">Directions</a>
+          </div>
         </div>
       </div>
     </section>
@@ -97,10 +129,10 @@
       </div>
     </section>
 
-    <!-- NEXT UP: 2028 -->
+    <!-- THE BIG GOAL: 2028 -->
     <section class="section" aria-labelledby="next-heading">
       <div class="container">
-        <p class="eyebrow">Next up &middot; 2028</p>
+        <p class="eyebrow">The big goal &middot; 2028</p>
         <h2 class="section__title" id="next-heading">A Mini Olympics.</h2>
         <p class="section__lede">When the Olympic Games come to Los Angeles in 2028, we want to host a mini Olympics for kids who never get to play organized sports. Real events, a ceremony, and a day they'll remember.</p>
 
@@ -145,7 +177,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=3a9bfd8"></script>
-  <script src="js/ball.js?v=3a9bfd8"></script>
+  <script src="js/main.js?v=53fc8f8"></script>
+  <script src="js/ball.js?v=53fc8f8"></script>
 </body>
 </html>

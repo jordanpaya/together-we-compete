@@ -9,13 +9,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3a9bfd8">
+  <link rel="stylesheet" href="css/styles.css?v=53fc8f8">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Shared header. If you change it here, change it in the other three pages too. -->
+  <div class="announce" data-until="2026-11-13">
+    <div class="container announce__inner">
+      <span class="announce__label">This week</span>
+      <p class="announce__text"><span class="announce__long">Gear drive at Harvard-Westlake Upper School, Monday to Friday, November 9 to 13.</span><span class="announce__short">Gear drive at Harvard-Westlake, Nov 9 to 13.</span></p>
+      <a class="announce__link" href="donate.html">What to bring</a>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="logo" href="index.html" aria-label="Together We Compete, home">
@@ -51,7 +59,7 @@
       <div class="container split">
         <div>
           <h2 class="list-heading" id="accept-heading">What we accept</h2>
-          <ul class="plain-list">
+          <ul class="tiles tiles--yes">
             <li>Cleats and athletic shoes</li>
             <li>Balls, any sport</li>
             <li>Pads and protective gear</li>
@@ -63,7 +71,7 @@
         </div>
         <div>
           <h2 class="list-heading">What we can't take</h2>
-          <ul class="plain-list">
+          <ul class="tiles tiles--no">
             <li>Cracked, dented, or expired helmets</li>
             <li>Broken straps, buckles, or padding</li>
             <li>Mold, heavy stains, or strong odors</li>
@@ -82,7 +90,8 @@
           <li class="method">
             <h3 class="method__title">Harvard-Westlake Upper School</h3>
             <p>3700 Coldwater Canyon Ave<br>Studio City, CA 91604</p>
-            <p><strong>October 28 to November 18.</strong> Everything collected goes to LA Promise Fund's Pavo Palooza on November 21.</p>
+            <p><strong>Monday to Friday, November 9 to 13.</strong> Everything collected goes to LA Promise Fund's Pavo Palooza on November 21.</p>
+            <p><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=3700+Coldwater+Canyon+Ave+Studio+City+CA+91604" rel="noopener">Directions</a></p>
           </li>
           <li class="method">
             <h3 class="method__title">Have a lot?</h3>
@@ -127,6 +136,31 @@
         </form>
       </div>
     </section>
+
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container">
+        <p class="eyebrow">Questions</p>
+        <h2 class="section__title" id="faq-heading">Quick answers.</h2>
+        <dl class="faq">
+          <div class="faq__item">
+            <dt>Does it have to be new?</dt>
+            <dd>No. Most of what we collect is used. It needs to be clean, intact, and ready for a kid to use this week.</dd>
+          </div>
+          <div class="faq__item">
+            <dt>Where does the gear go?</dt>
+            <dd>Everything from this drive is donated at LA Promise Fund's Pavo Palooza on November 21, at Westbrook Academy in South Gate.</dd>
+          </div>
+          <div class="faq__item">
+            <dt>Is it tax-deductible?</dt>
+            <dd>Yes. Together We Compete is a registered 501(c)(3). Email us if you need a receipt.</dd>
+          </div>
+          <div class="faq__item">
+            <dt>Can't make it this week?</dt>
+            <dd>Email <a href="mailto:support@togetherwecompete.org">support@togetherwecompete.org</a> and we'll figure something out.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
   </main>
 
   <!-- Shared footer. Same note as the header. -->
@@ -149,6 +183,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=3a9bfd8"></script>
+  <script src="js/main.js?v=53fc8f8"></script>
 </body>
 </html>
