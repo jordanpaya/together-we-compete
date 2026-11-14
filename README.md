@@ -15,7 +15,8 @@ js/ball.js          spinning basketball in the hero (raw WebGL, no deps)
 data/events.json    upcoming events (edit this, not the HTML)
 assets/logo.svg     header logo
 assets/favicon.svg  browser tab icon
-assets/partners/    partner logos (big5.png, from Wikimedia Commons)
+assets/partners/    partner logos. big5.png is the original from Wikimedia Commons;
+                    big5-ink.png and big5-white.png are single-color versions made from it
 ```
 
 ## Preview locally

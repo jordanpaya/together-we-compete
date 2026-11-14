@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=b45af19">
+  <link rel="stylesheet" href="css/styles.css?v=d864286">
 </head>
 <body>
 
@@ -17,11 +17,12 @@
 
   <!-- Shared header. If you change it here, change it in the other three pages too. -->
   <div class="announce" data-until="2026-11-13">
-    <div class="container announce__inner">
-      <span class="announce__label">This week</span>
-      <p class="announce__text"><span class="announce__long">Gear drive at Harvard-Westlake Upper School, Monday to Friday, November 9 to 13.</span><span class="announce__short">Gear drive at Harvard-Westlake, Nov 9 to 13.</span></p>
-      <a class="announce__link" href="donate.html">What to bring</a>
-    </div>
+    <a class="container announce__inner" href="donate.html">
+      <span class="announce__dot" aria-hidden="true"></span>
+      <span class="announce__text"><strong>Gear drive this week</strong><span class="announce__where"> &middot; Harvard-Westlake Upper School</span> &middot; Nov 9&ndash;13</span>
+      <span class="announce__cta">What to bring</span>
+    </a>
+  </div>
   </div>
 
   <header class="site-header">
@@ -57,22 +58,15 @@
             <a class="button button--primary" href="donate.html">Donate gear</a>
             <a class="button button--secondary" href="events.html">See upcoming events</a>
           </div>
+          <a class="hero__partner" href="https://www.big5sportinggoods.com/" rel="noopener">
+            <span class="hero__partner-label">In partnership with</span>
+            <img src="assets/partners/big5-ink.png" alt="Big 5 Sporting Goods" width="252" height="35">
+          </a>
         </div>
         <!-- Spinning basketball (js/ball.js). Decorative. Drag to spin, tap to flick. -->
         <div class="hero__visual">
           <canvas id="hero-ball" aria-hidden="true"></canvas>
         </div>
-      </div>
-    </section>
-
-    <!-- PARTNER -->
-    <section class="partner" aria-label="Partner">
-      <div class="container">
-        <a class="partner__card" href="https://www.big5sportinggoods.com/" rel="noopener">
-          <span class="partner__label">Official partner</span>
-          <img class="partner__logo" src="assets/partners/big5.png" alt="Big 5 Sporting Goods" width="266" height="47">
-          <span class="partner__text">Together We Compete is partnered with Big 5 Sporting Goods.</span>
-        </a>
       </div>
     </section>
 
@@ -185,14 +179,14 @@
       </div>
       <p class="site-footer__partner">
         <span>In partnership with</span>
-        <a href="https://www.big5sportinggoods.com/" rel="noopener"><img src="assets/partners/big5.png" alt="Big 5 Sporting Goods" width="266" height="47" loading="lazy"></a>
+        <a href="https://www.big5sportinggoods.com/" rel="noopener"><img src="assets/partners/big5-white.png" alt="Big 5 Sporting Goods" width="252" height="35" loading="lazy"></a>
       </p>
       <p class="site-footer__legal">Together We Compete is a registered 501(c)(3) non-profit organization based in California. EIN: 42-4594745. Contributions are tax-deductible to the full extent permitted by law.</p>
       <p class="site-footer__meta">Together We Compete &middot; Los Angeles, CA</p>
     </div>
   </footer>
 
-  <script src="js/main.js?v=b45af19"></script>
-  <script src="js/ball.js?v=b45af19"></script>
+  <script src="js/main.js?v=d864286"></script>
+  <script src="js/ball.js?v=d864286"></script>
 </body>
 </html>
