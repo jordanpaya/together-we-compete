@@ -452,7 +452,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   color: var(--body);
 }
-.hero__partner img { height: 18px; width: auto; opacity: 0.85; transition: opacity 160ms ease; }
+.hero__partner img { height: 18px; width: auto; max-width: none; flex: 0 0 auto; aspect-ratio: 252 / 35; opacity: 0.85; transition: opacity 160ms ease; }
 .hero__partner:hover img { opacity: 1; }
 @media (min-width: 900px) { .hero__partner img { height: 20px; } }
 
@@ -469,7 +469,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   color: rgba(251, 250, 247, 0.7);
 }
-.site-footer__partner img { height: 16px; width: auto; display: block; opacity: 0.85; }
+.site-footer__partner img { height: 16px; width: auto; max-width: none; flex: 0 0 auto; aspect-ratio: 252 / 35; display: block; opacity: 0.85; }
 .site-footer__partner a:hover img { opacity: 1; }
 .site-footer__partner + .site-footer__legal { margin-top: 1.25rem; }
 
